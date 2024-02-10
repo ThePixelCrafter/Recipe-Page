@@ -37,14 +37,14 @@ body {
     background-color: var(--back-color);
     display: grid;
     place-content: center;
-    grid-template-columns: 0.65fr;
+    grid-template-columns: 0.5fr;
     position: relative;
 }
 
 main {
     background-color: #fff;
     padding: 2.5em;
-    margin: 8rem;
+    margin: 8rem 0;
     border-radius: 1.2em;
 }
 
@@ -59,7 +59,7 @@ main h1 {
     margin: 1.5rem 0 1rem;
 }
 
-main p {
+main p.description {
     margin: 1rem 0;
     line-height: 1.4;
 }
@@ -81,7 +81,6 @@ main :is(ul, ol) {
 
 main li {
     padding: 0.5em 1em;
-    list-style-position: outside;
 }
 
 main .card li::marker {
@@ -95,35 +94,33 @@ main ul li::marker {
 main h2 {
     color: var(--accent-color);
     font: 1.7rem "Young Serif";
-    margin: 1rem 0 1rem;
+    margin: 1.5rem 0;
 }
 
 main section:nth-child(n + 2) {
-    border-top-style: solid;
-    border-width: 1px;
-    border-color: rgba(153, 153, 153, 0.252);
     margin-top: 1.5rem;
+    border-top: 1px solid rgba(153, 153, 153, 0.252);
 }
 
 main section li::marker {
     color: var(--accent-color);
 }
 
-main table {
-    width: 100%;
-    text-align: left;
+main .Nutrition-table__row {
+    display: flex;
+    padding: 1em;
 }
 
-main table th {
-    font-weight: normal;
+main .Nutrition-table__row:nth-child(n + 2) {
+    border-top: 1px solid rgba(153, 153, 153, 0.252); 
 }
 
-main table td {
+main .Nutrition-table__row > * {
+    flex: 1 1 0;
+}
+
+main .Nutrition-table__row .table-data {
     color: var(--accent-color);
-}
-
-main table tr {
-    padding: 10em;
 }
 
 .attribution {
@@ -131,4 +128,19 @@ main table tr {
     bottom: 2em;
     left: 50%;
     transform: translate(-50%);
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    main img {
+        border-radius: 0;
+    }
 }

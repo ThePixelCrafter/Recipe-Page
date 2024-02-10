@@ -130,7 +130,7 @@ main .Nutrition-table__row .table-data {
     transform: translate(-50%);
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
     body {
         grid-template-columns: 1fr;
     }
